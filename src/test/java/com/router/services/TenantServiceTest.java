@@ -1,7 +1,7 @@
 package com.router.services;
 
 import io.quarkus.test.junit.QuarkusTest;
-import com.router.service.TenantService;
+import com.router.service.RouterService;
 import org.junit.jupiter.api.Test;
 
 import javax.inject.Inject;
@@ -10,7 +10,7 @@ import javax.inject.Inject;
 public class TenantServiceTest {
 
     @Inject
-    TenantService tenantService;
+    RouterService tenantService;
 
     @Test
     public void whenTenantNameIsAThenResult() throws Exception{

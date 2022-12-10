@@ -9,7 +9,7 @@
     import java.util.stream.Collectors;
 
     @Singleton
-    public class TenantService {
+    public class RouterService {
         @Inject
         RouterConfiguration routerConfiguration;
 
