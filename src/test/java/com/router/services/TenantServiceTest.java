@@ -14,25 +14,25 @@ public class TenantServiceTest {
 
     @Test
     public void whenTenantNameIsAThenResult() throws Exception{
-        String tenantHost = tenantService.getTenantHost("a");
+        String tenantHost = tenantService.getClientHost("a");
         assert tenantHost.equals("http://localhost:8080");
     }
 
     @Test
     public void whenTenantNameIsBThenResult() throws Exception{
-        String tenantHost = tenantService.getTenantHost("b");
+        String tenantHost = tenantService.getClientHost("b");
         assert tenantHost.equals("http://localhost:8081");
     }
 
     @Test
     public void whenTenantNameIsCThenResult() throws Exception{
-        String tenantHost = tenantService.getTenantHost("c");
+        String tenantHost = tenantService.getClientHost("c");
         assert tenantHost.equals("http://localhost:8082");
     }
 
     @Test
     public void whenTenantNameIsUnknowThenNull() throws Exception{
-        String tenantHost = tenantService.getTenantHost("teste");
+        String tenantHost = tenantService.getClientHost("teste");
         assert tenantHost == null;
     }
 
@@ -40,7 +40,7 @@ public class TenantServiceTest {
     public void whenTenantNameIsNullThenException() throws Exception{
         Exception ex = null;
         try{
-            String tenantHost = tenantService.getTenantHost(null);
+            String tenantHost = tenantService.getClientHost(null);
         }catch (Exception e)
         {
             ex = e;

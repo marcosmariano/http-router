@@ -15,18 +15,18 @@
 
         private HashMap<String,String> tenants;
 
-        public String getTenantHeaderName(){return routerConfiguration.tenantHeaderName();}
+        public String getRouterHeaderName(){return routerConfiguration.routerHeaderName();}
 
-        public String getTenantHost(String tenantId) throws Exception
+        public String getClientHost(String tenantId) throws Exception
         {
             if(tenantId==null)
                 throw new Exception("Tenant Id can not be null");
 
-            splitTenantList(routerConfiguration.tenantList());
+            splitClientList(routerConfiguration.clientList());
             return this.tenants.get(tenantId);
         }
 
-        private  void splitTenantList(String tenantList) throws Exception
+        private  void splitClientList(String tenantList) throws Exception
         {
             if(tenantList==null)
                 throw new Exception("Tenant List can not be null");

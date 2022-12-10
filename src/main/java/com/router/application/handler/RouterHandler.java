@@ -17,9 +17,9 @@ public class RouterHandler {
     @RouteFilter
     void myFilter(RoutingContext rc) throws Exception {
         LOG.info("Path: "+rc.normalizedPath());
-        LOG.info("Header: "+rc.request().getHeader(tenantService.getTenantHeaderName()));
+        LOG.info("Header: "+rc.request().getHeader(tenantService.getRouterHeaderName()));
 
-        rc.redirect(tenantService.getTenantHost(rc.request().getHeader(tenantService.getTenantHeaderName())) + rc.request().uri())
+        rc.redirect(tenantService.getClientHost(rc.request().getHeader(tenantService.getRouterHeaderName())) + rc.request().uri())
                 .onSuccess(h-> LOG.info("Redirected with success"))
                 .onComplete(c->LOG.info("End Request"))
                 .onFailure(throwable -> new Exception("Error when redirect request"));
